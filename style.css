@@ -16,7 +16,6 @@ body {
 }
 
 .card-game {
-    
     width: 740px;
     height: 740px;
     display: flex;
@@ -29,26 +28,48 @@ body {
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5); 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    perspective: 1000px;
    }
 
 
 
 .card {
-    width: 33%;
-    height: 25% ;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    overflow: hidden;
-    justify-content: space-between;
-    padding: 10px;
+width: calc(25% - 10px);
+height: calc(33.333% - 10px);
+margin: 5px;
+position: relative;
+transform: scale(1);
+transform-style: preserve-3d;
+transition: transform .5s;
+box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    
 }
 
-.back, .front {
+.card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.card.flip {
+ 
+transform: rotateY(180deg);
+}
+
+.front,
+.back{
     position: absolute;
      width: 100%;
     height: 90%;
     object-fit: contain;
     display: flex;
+    cursor: pointer;
+    backface-visibility: hidden;
+    
 }
+
+.front{
+    transform: rotateX(180deg);
+}
+
+
 
