@@ -57,8 +57,9 @@ transform: rotateY(180deg);
 
 
 .card.flip.remove {
-    display: none;
-
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .front,
