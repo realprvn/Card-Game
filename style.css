@@ -55,6 +55,12 @@ box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 transform: rotateY(180deg);
 }
 
+
+.card.flip.remove {
+    display: none;
+
+}
+
 .front,
 .back{
     position: absolute;
